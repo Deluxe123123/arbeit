@@ -7,11 +7,11 @@ public class ReadFiles  {
 	int index = 0, y = 0, x;
 	
 	public void readfile(Fenster fenster, boolean gameOver) throws IOException{
-		FileReader fr;
+		FileReader fr;	
 		if(gameOver) {
-			fr = new FileReader("C:\\Users\\YAlSabiry\\Desktop\\Android\\Eclipse Projekte\\SWING\\src\\swings\\gameover.txt");
+			fr = new FileReader(getClass().getResource("/SWING/resources/gameover.txt").getPath());
 		}else {
-			fr = new FileReader("C:\\Users\\YAlSabiry\\Desktop\\Android\\Eclipse Projekte\\SWING\\src\\swings\\you-win.txt");
+			fr = new FileReader(getClass().getResource("/SWING/resources/you-win.txt").getPath());
 		}
 	    BufferedReader br = new BufferedReader(fr);
 

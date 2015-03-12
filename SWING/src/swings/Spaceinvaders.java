@@ -127,13 +127,6 @@ public class Spaceinvaders implements KeyListener {
 				Figuren schuss = istAlienVonEinSchussGetroffen(listOfAlienList.get(k).get(j),schussList);  
 				
 				if(schuss != null) {
-					schuss.nextAussehen();
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						// TODO Automatisch generierter Erfassungsblock
-						e.printStackTrace();
-					}	
 					schussList.remove(schuss);
 					return true;
 				}else {
@@ -292,8 +285,8 @@ public class Spaceinvaders implements KeyListener {
 		if(richtung == true) {
 			if(tempXAlien == x) {
 				if(tempYAlien >= y) {
-					removeAll();
 					gameFinished = true;
+					removeAll();
 					tempAlienAchse.x = 0;
 					tempAlienAchse.y = 0;
 				}else {
@@ -312,8 +305,8 @@ public class Spaceinvaders implements KeyListener {
 		}else {
 			if(tempXAlien == 0) {
 				if(tempYAlien >= y) {
-					removeAll();
 					gameFinished = true;
+					removeAll();
 					tempAlienAchse.x = 0;
 					tempAlienAchse.y = 0;
 				}else {
@@ -369,8 +362,10 @@ public class Spaceinvaders implements KeyListener {
 				return false;
 			}
 		}
-		gameFinished = true;
-		gameOver = false;
+		if(!gameFinished) {
+			gameFinished = true;
+			gameOver = false;
+		}
 		return true;
 	}
 	

@@ -64,24 +64,19 @@ public abstract class Figuren {
 		char hitChar = ' ';
 		char[] aussehen = getCurrentAussehen();
 		char[] hitmask = this.hitMask;
-		for (int i = 0, figurSize = getTotalSize(); i < figurSize; ++i) {
-			if(figurSize<10) {
-				if (hitmask[i] == 1) {
-					aussehen[i] = hitChar;
-				}
-			}	
-		}
 		
-		for(int i = 0, figurSize = getTotalSize(); i < figurSize; i++) {
+		for(int i = 0; i < getTotalSize(); i++) {
 			int y = getPosition().y + (i / getXYSize().x) % getXYSize().y;
 			int x = getPosition().x + i % getXYSize().x;
 			// todo: 80 aus fenster auslesen
 			int index = y * 80 + x;
-			if(aussehen[i] ==1) {
-				aussehen[i] = ' ';
+			if(aussehen[i] ==' ') {
+				hitmask[i] = 1;
+			}
+			if (hitmask[i] == 1) {
+				aussehen[i] = hitChar;
 			}
 			fenster.getLblList().get(index).setText("" + aussehen[i]);	
-			
 		}
 	}
 	
@@ -101,8 +96,7 @@ public abstract class Figuren {
 			return false;
 		}
 		int index = getSmallIndex(schussPosition);
-		char[] mask = this.hitMask;
-		if(mask[index] == 1) {
+		if(this.hitMask[index] == 1) {
 			return false;
 		}
 		return true;	

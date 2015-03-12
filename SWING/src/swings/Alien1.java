@@ -18,11 +18,11 @@ public class Alien1 extends Figuren{
 		
 		char [] aussehen = new char[getTotalSize()];
 		
-		aussehen[0] = 1;
+		aussehen[0] = ' ';
 		aussehen[1] = '/';
 		aussehen[2] = '^';
 		aussehen[3] = '\\';
-		aussehen[4] = 1;
+		aussehen[4] = ' ';
 		aussehen[5] = '|';
 		aussehen[6] = '^';
 		aussehen[7] = '|';
@@ -31,11 +31,11 @@ public class Alien1 extends Figuren{
 		aussehenVarianten.add(aussehen);
 
 		aussehen = new char[getTotalSize()];
-		aussehen[0] = 1;
+		aussehen[0] = ' ';
 		aussehen[1] = '/';
 		aussehen[2] = '^';
 		aussehen[3] = '\\';
-		aussehen[4] = 1;
+		aussehen[4] = ' ';
 		aussehen[5] = '/';
 		aussehen[6] = '^';
 		aussehen[7] = '|';
