@@ -9,9 +9,9 @@ public class ReadFiles  {
 	public void readfile(Fenster fenster, boolean gameOver) throws IOException{
 		FileReader fr;	
 		if(gameOver) {
-			fr = new FileReader(getClass().getResource("/SWING/resources/gameover.txt").getPath());
+			fr = new FileReader(getClass().getResource("/gameover.txt").getPath());
 		}else {
-			fr = new FileReader(getClass().getResource("/SWING/resources/you-win.txt").getPath());
+			fr = new FileReader(getClass().getResource("/you-win.txt").getPath());
 		}
 	    BufferedReader br = new BufferedReader(fr);
 
